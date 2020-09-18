@@ -1,6 +1,8 @@
 package br.com.devsuperior.gamepesquisa.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.devsuperior.gamepesquisa.entities.enums.Platform;
 
@@ -12,6 +14,8 @@ public class Game implements Serializable {
 	private String title;
 	private Platform platform;
 	private Genre genre;
+	
+	private List<Record> records = new ArrayList<>();
 	
 	public Game() {}
 
@@ -53,6 +57,10 @@ public class Game implements Serializable {
 
 	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+
+	public List<Record> getRecords() {
+		return records;
 	}
 
 	@Override

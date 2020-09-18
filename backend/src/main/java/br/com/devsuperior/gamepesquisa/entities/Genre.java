@@ -1,6 +1,7 @@
 package br.com.devsuperior.gamepesquisa.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Genre implements Serializable {
@@ -9,7 +10,7 @@ public class Genre implements Serializable {
 	
 	private Long id;
 	private String nome;
-	private List<Game> games;
+	private List<Game> games = new ArrayList<>();
 	
 	public Genre() {}
 
