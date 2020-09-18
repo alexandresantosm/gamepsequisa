@@ -11,14 +11,16 @@ public class Game implements Serializable {
 	private Long id;
 	private String title;
 	private Platform platform;
+	private Genre genre;
 	
 	public Game() {}
 
-	public Game(Long id, String title, Platform platform) {
+	public Game(Long id, String title, Platform platform, Genre genre) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.platform = platform;
+		this.genre = genre;
 	}
 
 	public Long getId() {
@@ -43,6 +45,14 @@ public class Game implements Serializable {
 
 	public void setPlatform(Platform platform) {
 		this.platform = platform;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 
 	@Override
