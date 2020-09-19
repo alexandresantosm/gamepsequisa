@@ -3,6 +3,8 @@ package br.com.devsuperior.gamepesquisa.services;
 import java.time.Instant;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,13 @@ public class RecordService {
 	@Autowired
 	private GameRepository gameRepository;
 	
+	
+	@Transactional(readOnly = true)
+	public Page<RecordDTO> findByMoments(Instant initialDate, Instant lastDate, PageRequest pageRequest) {
+
+		return recordRepository.findByMoments(initialDate, lastDate, pageRequest).map(record -> new RecordDTO(record));
+	}
+	
 	@Transactional
 	public RecordDTO insert(RecordInsertDTO recordInsertDTO) {
 		Record record = new Record();
@@ -37,4 +46,5 @@ public class RecordService {
 		
 		return new RecordDTO(record);
 	}
+
 }
