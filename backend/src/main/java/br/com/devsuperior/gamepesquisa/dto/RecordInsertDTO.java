@@ -6,18 +6,18 @@ public class RecordInsertDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String game;
+	private String name;
 	private Integer age;
 	private Long gameId;
 	
 	public RecordInsertDTO() {}
 
-	public String getGame() {
-		return game;
+	public String getName() {
+		return name;
 	}
 
-	public void setGame(String game) {
-		this.game = game;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getAge() {
