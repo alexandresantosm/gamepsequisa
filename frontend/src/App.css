@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+:root {
+  --color-turquoise: #00D4FF;
+  --color-coral:  #ED7947;
+  --color-dimgray: #4C5D67;
+  --color-darkslategray: #37474F;
+  --color-black: #0B1F34;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Play', sans-serif;
+}
+
+body {
+  background: var(--color-black);
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--color-turquoise);
+}
+
+.text-primary {
+  color: var(--color-coral);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
