@@ -1,0 +1,54 @@
+.home-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  width: 550px;
+  margin-right: 70px;
+}
+
+.title {
+  font-size: 55px;
+  color: var(--color-turquoise);
+}
+
+.subtitle {
+  font-size: 24px;
+  color: var(--color-coral);
+}
+
+.actions {
+  display: flex;
+  height: 70px;
+  margin-top: 50px;
+}
+
+.btn {
+  background-color: var(--color-turquoise);
+  border-radius: 10px 0px 0px 10px;
+  color: var(--color-black);
+  font-weight: bold;
+  font-size: 24px;
+  padding: 20px 45px;
+}
+
+.btn:hover {
+  background-color: #04C7EF;
+} 
+
+.btn-icon {
+  background-color: var(--color-coral);
+  border-radius: 0px 10px 10px 0px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gamer-image {
+  margin-top: 40px;
+  max-width: 400px;
+  height: auto;
+}

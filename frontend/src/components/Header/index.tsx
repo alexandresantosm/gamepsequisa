@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg';
 import './styles.css';
 
 const Header = () => (
-  <header className="container">
+  <header className="header-container">
     <Logo />
     <div>
       <div className="logo-text">
