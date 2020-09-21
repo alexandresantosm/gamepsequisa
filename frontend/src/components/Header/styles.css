@@ -1,0 +1,27 @@
+.container {
+  height: 30px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-darkslategray);
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.logo-text-first {
+  color: var(--color-coral);
+}
+
+.logo-text-last {
+  color: #FFF;
+}
+
+@media (max-width: 850px) {
+  .container {
+    justify-content: center;
+  }
+}
