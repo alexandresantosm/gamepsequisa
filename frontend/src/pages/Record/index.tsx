@@ -27,7 +27,7 @@ const Record = () => {
 
   return (
     <div className="container">
-      <Filter link="#" linkText="VER GRÁFICOS" />
+      <Filter link="/charts" linkText="VER GRÁFICOS" />
       <table className="records" cellPadding="0" cellSpacing="0">
         <thead>
           <tr>

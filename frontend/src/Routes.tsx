@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Record from './pages/Record';
+import Charts from './pages/Charts';
 
 const Routes = () => (
   <BrowserRouter>
@@ -14,6 +15,9 @@ const Routes = () => (
       </Route>
       <Route path="/records" exact>
         <Record />
+      </Route>
+      <Route path="/charts" exact>
+        <Charts />
       </Route>
     </Switch>
   </BrowserRouter>
