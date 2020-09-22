@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RecordsResponse } from  './types';
 
 import Filter from '../../components/Filter';
+import Pagination from './Pagination';
 
 import './styles.css';
 
@@ -16,9 +17,13 @@ const Record = () => {
   const [activePage, setActivePage] = useState(0);
   
   useEffect(() => {
-    const res = axios.get(`${BaseURL}/records?linesPerPage=12`)
-      .then(response => setRecordResponse(response.data))    
-  }, []);
+    axios.get(`${BaseURL}/records?linesPerPage=12&page=${activePage}`)
+      .then(response => setRecordResponse(response.data));   
+  }, [activePage]);
+
+  function handlePageChange(page: number) {
+    setActivePage(page);
+  }
 
   return (
     <div className="container">
@@ -47,7 +52,10 @@ const Record = () => {
           ))}
         </tbody>
       </table>
-      <div>1 2 3 4 5 6 7 8</div>
+      <Pagination 
+        activePage={activePage}
+        totalPages={recordResponse?.totalPages}
+        goToPage={handlePageChange}/>
     </div>
   );
 }
