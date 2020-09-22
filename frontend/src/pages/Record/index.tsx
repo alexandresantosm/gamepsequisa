@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import { RecordsResponse } from  './types';
+
 import Filter from '../../components/Filter';
 
 import './styles.css';
 
+import { formatDate } from './helpers';
+
+const BaseURL:string = 'https://game-preference-search.herokuapp.com';
+
 const Record = () => {
+  const [recordResponse, setRecordResponse] = useState<RecordsResponse>();
+  const [activePage, setActivePage] = useState(0);
+  
+  useEffect(() => {
+    const res = axios.get(`${BaseURL}/records?linesPerPage=12`)
+      .then(response => setRecordResponse(response.data))    
+  }, []);
+
   return (
     <div className="container">
       <Filter link="#" linkText="VER GRÁFICOS" />
@@ -19,46 +35,16 @@ const Record = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>20/08/2020 13:45</td>
-            <td>João da Silva</td>
-            <td>23</td>
-            <td>Playstation</td>
-            <td>Ação - Aventura</td>
-            <td>The Last of Us</td>
-          </tr>
-          <tr>
-            <td>20/08/2020 13:45</td>
-            <td>João da Silva</td>
-            <td>23</td>
-            <td>Playstation</td>
-            <td>Ação - Aventura</td>
-            <td>The Last of Us</td>
-          </tr>
-          <tr>
-            <td>20/08/2020 13:45</td>
-            <td>João da Silva</td>
-            <td>23</td>
-            <td>Playstation</td>
-            <td>Ação - Aventura</td>
-            <td>The Last of Us</td>
-          </tr>
-          <tr>
-            <td>20/08/2020 13:45</td>
-            <td>João da Silva</td>
-            <td>23</td>
-            <td>Playstation</td>
-            <td>Ação - Aventura</td>
-            <td>The Last of Us</td>
-          </tr>
-          <tr>
-            <td>20/08/2020 13:45</td>
-            <td>João da Silva</td>
-            <td>23</td>
-            <td>Playstation</td>
-            <td>Ação - Aventura</td>
-            <td>The Last of Us</td>
-          </tr>
+          {recordResponse?.content.map(record => (
+            <tr key={record.id}>
+              <td>{formatDate(record.moment)}</td>
+              <td>{record.name}</td>
+              <td>{record.age}</td>
+              <td>{record.gamePlatform}</td>
+              <td>{record.genreName}</td>
+              <td>{record.gameTitle}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div>1 2 3 4 5 6 7 8</div>
