@@ -10,14 +10,14 @@ import './styles.css';
 
 import { formatDate } from './helpers';
 
-const BaseURL:string = 'https://game-preference-search.herokuapp.com';
+const baseURL = process.env.REACT_APP_API_URL;
 
 const Record = () => {
   const [recordResponse, setRecordResponse] = useState<RecordsResponse>();
   const [activePage, setActivePage] = useState(0);
   
   useEffect(() => {
-    axios.get(`${BaseURL}/records?linesPerPage=12&page=${activePage}`)
+    axios.get(`${baseURL}/records?linesPerPage=12&page=${activePage}`)
       .then(response => setRecordResponse(response.data));   
   }, [activePage]);
 

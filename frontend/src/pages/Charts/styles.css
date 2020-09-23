@@ -1,5 +1,13 @@
+.page-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 50px auto;
+}
+
 .chart-container {
   display: flex;
+  
 }
 
 .top-related {
@@ -19,7 +27,7 @@
 
 .games-container {
   display: flex;
-  justify-content: right;
+  justify-content: left;
 }
 
 .games-list {
@@ -65,7 +73,7 @@
   border-radius: 10px;
 }
 
-.gender-chart {
+.genre-chart {
   padding-top: 15px;
   padding-left: 25px;
   height: 373px;

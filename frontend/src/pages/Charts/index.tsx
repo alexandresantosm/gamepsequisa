@@ -24,7 +24,7 @@ const initialPieDate = {
   series: []
 }
 
-const BaseURL:string = 'https://game-preference-search.herokuapp.com';
+const baseURL = process.env.REACT_APP_API_URL;
 
 const Charts = () => {
   const [barChartData, setBarChartData] = useState<BarChartData[]>([]);
@@ -33,8 +33,8 @@ const Charts = () => {
 
   useEffect(() => {
     async function getData() {
-      const recordsResponse = await axios.get(`${BaseURL}/records`);
-      const gamesResponse = await axios.get(`${BaseURL}/games`);
+      const recordsResponse = await axios.get(`${baseURL}/records`);
+      const gamesResponse = await axios.get(`${baseURL}/games`);
   
       const barData = buildBarSeries(gamesResponse.data, recordsResponse.data.content);
       setBarChartData(barData);
@@ -78,13 +78,13 @@ const Charts = () => {
             />
           </div>
           <div className="genre-chart">
-          <h2 className="chart-title">Gêneros</h2>
-            <Chart 
-              options={{...pieOptions, labels: genreData?.labels}}
-              type="donut"
-              series={genreData?.series}
-              width="350"
-            />
+            <h2 className="chart-title">Gêneros</h2>
+              <Chart 
+                options={{...pieOptions, labels: genreData?.labels}}
+                type="donut"
+                series={genreData?.series}
+                width="350"
+              />
           </div>
         </div>
       </div>

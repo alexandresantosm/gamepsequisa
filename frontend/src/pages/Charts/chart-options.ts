@@ -47,7 +47,7 @@ export const barOptions = {
       horizontal: true,
       endingShape: "rounded",
       startingShape: "rounded",
-      barHeight: "60px",
+      barHeight: "30px",
     },
   },
   datLabels: {
@@ -80,4 +80,15 @@ export const barOptions = {
       },
     },
   ],
+  title: {
+    text: "Quantidade de votos",
+    floating: true,
+    offsetY: 630,
+    align: "right",
+    style: {
+      color: "#ED7947",
+      fontSize: "16px",
+      fontFamily: "Play, sans-serif",
+    }
+  },
 }
